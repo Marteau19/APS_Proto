@@ -37,15 +37,15 @@ export default function FlowIQPanel({ onClose }) {
   return (
     <div className="w-96 bg-white border-l border-slate-200 flex flex-col shrink-0 animate-slide-in-right">
       {/* Header */}
-      <div className="px-4 py-3 border-b border-slate-200 flex items-center gap-3">
-        <div className="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center">
-          <Sparkles size={16} className="text-violet-600" />
+      <div className="px-4 py-3 flowiq-card flex items-center gap-3">
+        <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+          <Sparkles size={16} className="text-white" />
         </div>
         <div>
-          <h2 className="text-sm font-semibold text-slate-900">FlowIQ</h2>
-          <p className="text-[11px] text-slate-500">AI Scheduling Assistant</p>
+          <h2 className="text-sm font-semibold text-white">FlowIQ</h2>
+          <p className="text-[11px] text-white/60">AI Scheduling Assistant</p>
         </div>
-        <button onClick={onClose} className="ml-auto p-1 text-slate-400 hover:text-slate-600">
+        <button onClick={onClose} className="ml-auto p-1 text-white/50 hover:text-white">
           <X size={16} />
         </button>
       </div>
@@ -64,17 +64,17 @@ export default function FlowIQPanel({ onClose }) {
                 {msg.insights && (
                   <div className="space-y-2">
                     {msg.insights.map((insight, j) => (
-                      <div key={j} className="flex gap-2 p-2.5 bg-violet-50 rounded-lg border border-violet-100">
-                        {insight.icon === 'alert' && <AlertCircle size={14} className="text-red-500 mt-0.5 shrink-0" />}
-                        {insight.icon === 'trend' && <TrendingUp size={14} className="text-amber-500 mt-0.5 shrink-0" />}
-                        {insight.icon === 'action' && <Zap size={14} className="text-violet-500 mt-0.5 shrink-0" />}
-                        <p className="text-xs text-slate-700 leading-relaxed">{insight.text}</p>
+                      <div key={j} className="flex gap-2 p-2.5 flowiq-card rounded-lg">
+                        {insight.icon === 'alert' && <AlertCircle size={14} className="text-red-400 mt-0.5 shrink-0" />}
+                        {insight.icon === 'trend' && <TrendingUp size={14} className="text-amber-400 mt-0.5 shrink-0" />}
+                        {insight.icon === 'action' && <Zap size={14} className="text-blue-300 mt-0.5 shrink-0" />}
+                        <p className="text-xs text-white/90 leading-relaxed">{insight.text}</p>
                       </div>
                     ))}
                   </div>
                 )}
                 {msg.action && (
-                  <button className="flex items-center gap-1.5 text-xs text-violet-600 font-medium hover:text-violet-700 mt-1">
+                  <button className="flex items-center gap-1.5 text-xs text-blue-400 font-medium hover:text-blue-300 mt-1">
                     {msg.action} <ArrowRight size={12} />
                   </button>
                 )}
@@ -97,7 +97,7 @@ export default function FlowIQPanel({ onClose }) {
                   getSimulatedResponse(q),
                 ]);
               }}
-              className="text-[11px] px-2.5 py-1 rounded-full border border-violet-200 text-violet-600 hover:bg-violet-50 transition-colors"
+              className="text-[11px] px-2.5 py-1 rounded-full border border-indigo-300 text-indigo-600 hover:bg-indigo-50 transition-colors font-medium"
             >
               {q}
             </button>

@@ -22,17 +22,17 @@ export default function Capacity() {
           <h2 className="text-lg font-semibold text-slate-900">Capacity & Load</h2>
           <p className="text-sm text-slate-500 mt-0.5">Load vs. capacity by resource — 7-day view</p>
         </div>
-        <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-violet-50 border border-violet-200 text-xs text-violet-700 hover:bg-violet-100">
+        <button className="flowiq-card flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-white font-medium hover:opacity-90">
           <Sparkles size={12} /> Find bottlenecks
         </button>
       </div>
 
       {/* FlowIQ Insight */}
-      <div className="bg-violet-50 border border-violet-200 rounded-xl px-5 py-4 flex items-start gap-3">
-        <Sparkles size={16} className="text-violet-500 mt-0.5 shrink-0" />
+      <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
+        <Sparkles size={16} className="text-white mt-0.5 shrink-0" />
         <div>
-          <p className="text-sm text-violet-700">
-            <strong>Bottleneck detected:</strong> Paint Line 1 is at 135% capacity for days +2 to +4.
+          <p className="text-sm text-white/90">
+            <strong className="text-white">Bottleneck detected:</strong> Paint Line 1 is at 135% capacity for days +2 to +4.
             CNC Lathe #1 is down. Recommended: reroute CNC jobs to Mill #2 and defer low-priority paint jobs.
           </p>
         </div>
@@ -167,12 +167,12 @@ export default function Capacity() {
                     </div>
 
                     {isOverloaded && (
-                      <div className="mt-4 bg-violet-50 border border-violet-200 rounded-lg p-3 flex items-start gap-2">
-                        <Sparkles size={14} className="text-violet-500 mt-0.5 shrink-0" />
-                        <p className="text-xs text-violet-700">
-                          <strong>FlowIQ:</strong> This resource is overloaded. I can suggest load leveling
+                      <div className="mt-4 flowiq-card rounded-lg p-3 flex items-start gap-2">
+                        <Sparkles size={14} className="text-white mt-0.5 shrink-0" />
+                        <p className="text-xs text-white/90">
+                          <strong className="text-white">FlowIQ:</strong> This resource is overloaded. I can suggest load leveling
                           by shifting {isDown ? 'jobs to alternate resources' : 'lower-priority jobs to lighter days'}.
-                          <button className="ml-1 text-violet-600 underline underline-offset-2 font-medium">
+                          <button className="ml-1 text-blue-300 underline underline-offset-2 font-medium">
                             Show options
                           </button>
                         </p>

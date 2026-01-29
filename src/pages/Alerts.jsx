@@ -145,20 +145,20 @@ export default function Alerts() {
                     </div>
 
                     {/* FlowIQ suggestion */}
-                    <div className="bg-violet-50 border border-violet-200 rounded-lg p-4">
+                    <div className="flowiq-card rounded-lg p-4">
                       <div className="flex items-start gap-2">
-                        <Sparkles size={16} className="text-violet-500 mt-0.5 shrink-0" />
+                        <Sparkles size={16} className="text-white mt-0.5 shrink-0" />
                         <div>
-                          <h4 className="text-xs font-semibold text-violet-800 mb-1">FlowIQ Recommendation</h4>
-                          <p className="text-sm text-violet-700">{alert.flowiqSuggestion}</p>
+                          <h4 className="text-xs font-semibold text-white mb-1">FlowIQ Recommendation</h4>
+                          <p className="text-sm text-white/90">{alert.flowiqSuggestion}</p>
                           <div className="flex gap-2 mt-3">
-                            <button className="text-xs px-3 py-1.5 rounded-lg bg-violet-600 text-white font-medium hover:bg-violet-700 transition-colors">
+                            <button className="text-xs px-3 py-1.5 rounded-lg bg-white text-slate-900 font-medium hover:bg-white/90 transition-colors">
                               Apply suggestion
                             </button>
-                            <button className="text-xs px-3 py-1.5 rounded-lg border border-violet-300 text-violet-700 font-medium hover:bg-violet-100 transition-colors">
+                            <button className="text-xs px-3 py-1.5 rounded-lg border border-white/30 text-white font-medium hover:bg-white/10 transition-colors">
                               Simulate first
                             </button>
-                            <button className="text-xs px-3 py-1.5 rounded-lg text-violet-600 font-medium hover:bg-violet-100 transition-colors">
+                            <button className="text-xs px-3 py-1.5 rounded-lg text-white/70 font-medium hover:bg-white/10 transition-colors">
                               Dismiss
                             </button>
                           </div>
