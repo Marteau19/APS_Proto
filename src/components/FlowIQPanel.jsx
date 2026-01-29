@@ -67,14 +67,14 @@ export default function FlowIQPanel({ onClose }) {
                       <div key={j} className="flex gap-2 p-2.5 flowiq-card rounded-lg">
                         {insight.icon === 'alert' && <AlertCircle size={14} className="text-red-400 mt-0.5 shrink-0" />}
                         {insight.icon === 'trend' && <TrendingUp size={14} className="text-amber-400 mt-0.5 shrink-0" />}
-                        {insight.icon === 'action' && <Zap size={14} className="text-blue-300 mt-0.5 shrink-0" />}
+                        {insight.icon === 'action' && <Zap size={14} className="text-[#43C4EF] mt-0.5 shrink-0" />}
                         <p className="text-xs text-white/90 leading-relaxed">{insight.text}</p>
                       </div>
                     ))}
                   </div>
                 )}
                 {msg.action && (
-                  <button className="flex items-center gap-1.5 text-xs text-blue-400 font-medium hover:text-blue-300 mt-1">
+                  <button className="flex items-center gap-1.5 text-xs text-[#43C4EF] font-medium hover:text-[#43C4EF]/80 mt-1">
                     {msg.action} <ArrowRight size={12} />
                   </button>
                 )}
@@ -97,7 +97,7 @@ export default function FlowIQPanel({ onClose }) {
                   getSimulatedResponse(q),
                 ]);
               }}
-              className="text-[11px] px-2.5 py-1 rounded-full border border-indigo-300 text-indigo-600 hover:bg-indigo-50 transition-colors font-medium"
+              className="text-[11px] px-2.5 py-1 rounded-full border border-[#43C4EF]/40 text-[#051E40] hover:bg-[#43C4EF]/10 transition-colors font-medium"
             >
               {q}
             </button>
@@ -117,7 +117,7 @@ export default function FlowIQPanel({ onClose }) {
           />
           <button
             onClick={handleSend}
-            className="p-1.5 rounded-md bg-violet-500 text-white hover:bg-violet-600 transition-colors"
+            className="p-1.5 rounded-md bg-[#051E40] text-[#43C4EF] hover:bg-[#051E40]/80 transition-colors"
           >
             <Send size={14} />
           </button>

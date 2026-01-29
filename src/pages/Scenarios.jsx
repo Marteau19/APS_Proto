@@ -47,7 +47,7 @@ export default function Scenarios() {
             <strong className="text-white">FlowIQ:</strong> I've generated 2 what-if scenarios based on your current exceptions.
             "Rush WO-1002 + Overtime" shows the best OTIF improvement (+5 points) with moderate cost impact.
           </p>
-          <button className="text-xs text-blue-300 font-medium mt-1 underline underline-offset-2">
+          <button className="text-xs text-[#43C4EF] font-medium mt-1 underline underline-offset-2">
             Compare both scenarios below
           </button>
         </div>

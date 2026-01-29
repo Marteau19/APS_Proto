@@ -23,12 +23,11 @@
   --color-status-critical: #ef4444;
   --color-status-info: #3b82f6;
 
-  --color-flowiq: #8b5cf6;
-  --color-flowiq-light: #ede9fe;
-  --color-flowiq-bg: #f5f3ff;
-  --color-flowiq-dark-from: #0f172a;
-  --color-flowiq-dark-via: #1e1b4b;
-  --color-flowiq-dark-to: #3b0764;
+  --color-flowiq: #43C4EF;
+  --color-flowiq-light: #e0f5fd;
+  --color-flowiq-bg: #f0faff;
+  --color-flowiq-dark: #051E40;
+  --color-flowiq-accent: #43C4EF;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -52,15 +51,15 @@
 ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
 @keyframes flowiq-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(139, 92, 246, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(67, 196, 239, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(67, 196, 239, 0); }
 }
 .flowiq-pulse {
   animation: flowiq-pulse 2s ease-in-out infinite;
 }
 .flowiq-card {
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 55%, #3b0764 100%);
-  border: 1px solid rgba(139, 92, 246, 0.25);
+  background: linear-gradient(135deg, #051E40 0%, #0a3260 55%, #051E40 100%);
+  border: 1px solid rgba(67, 196, 239, 0.25);
 }
 
 @keyframes fade-in {
