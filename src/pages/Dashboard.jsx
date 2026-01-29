@@ -21,21 +21,21 @@ export default function Dashboard() {
       {/* FlowIQ Morning Brief */}
       <div className="flowiq-card rounded-xl p-5">
         <div className="flex items-start gap-3">
-          <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-            <Sparkles size={18} className="text-white" />
+          <div className="w-9 h-9 rounded-lg bg-[#051E40]/10 flex items-center justify-center shrink-0">
+            <Sparkles size={18} className="text-[#051E40]" />
           </div>
           <div className="flex-1">
-            <h2 className="text-sm font-semibold text-white mb-1">FlowIQ Daily Brief</h2>
-            <p className="text-sm text-white/90 leading-relaxed">
-              You have <strong className="text-white">{criticalAlerts.length} critical alerts</strong> and <strong className="text-white">{atRiskOrders.length} orders at risk</strong>.
-              Top priority: <strong className="text-white">WO-1008</strong> is past due — expediting could recover it today.
+            <h2 className="text-sm font-semibold text-[#051E40] mb-1">FlowIQ Daily Brief</h2>
+            <p className="text-sm text-[#051E40]/90 leading-relaxed">
+              You have <strong className="text-[#051E40]">{criticalAlerts.length} critical alerts</strong> and <strong className="text-[#051E40]">{atRiskOrders.length} orders at risk</strong>.
+              Top priority: <strong className="text-[#051E40]">WO-1008</strong> is past due — expediting could recover it today.
               CNC Lathe #1 is down, affecting 2 orders. I have rerouting options ready.
             </p>
             <div className="flex gap-2 mt-3">
-              <Link to="/alerts" className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-900 bg-white px-3 py-1.5 rounded-lg hover:bg-white/90 transition-colors">
+              <Link to="/alerts" className="inline-flex items-center gap-1.5 text-xs font-medium text-white bg-[#051E40] px-3 py-1.5 rounded-lg hover:bg-[#051E40]/90 transition-colors">
                 View alerts <ArrowRight size={12} />
               </Link>
-              <Link to="/schedule" className="inline-flex items-center gap-1.5 text-xs font-medium text-white/80 hover:text-white">
+              <Link to="/schedule" className="inline-flex items-center gap-1.5 text-xs font-medium text-[#051E40]/70 hover:text-[#051E40]">
                 Open schedule <ArrowRight size={12} />
               </Link>
             </div>

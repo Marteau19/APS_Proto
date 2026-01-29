@@ -24,9 +24,9 @@ export default function Promise() {
 
       {/* FlowIQ insight */}
       <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
-        <Sparkles size={16} className="text-white mt-0.5 shrink-0" />
-        <p className="text-sm text-white/90">
-          <strong className="text-white">FlowIQ:</strong> PR-002 (Turbine Bracket for Delta Aero) cannot be fulfilled by the requested date with current capacity.
+        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0" />
+        <p className="text-sm text-[#051E40]/90">
+          <strong className="text-[#051E40]">FlowIQ:</strong> PR-002 (Turbine Bracket for Delta Aero) cannot be fulfilled by the requested date with current capacity.
           CTP shows it's feasible by {format(promiseRequests[1].ctpResult.date, 'MMM dd')} with overtime. Want me to simulate the impact?
         </p>
       </div>
@@ -190,7 +190,7 @@ export default function Promise() {
               <button className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition-colors">
                 <CheckCircle2 size={14} /> Commit CTP Date
               </button>
-              <button className="flowiq-card flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm text-white font-medium hover:opacity-90 transition-colors">
+              <button className="flowiq-card flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm text-[#051E40] font-medium hover:opacity-90 transition-colors">
                 <Sparkles size={14} /> Simulate alternatives
               </button>
             </div>
