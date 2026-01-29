@@ -172,7 +172,7 @@ export default function Capacity() {
                         <p className="text-xs text-white/90">
                           <strong className="text-white">FlowIQ:</strong> This resource is overloaded. I can suggest load leveling
                           by shifting {isDown ? 'jobs to alternate resources' : 'lower-priority jobs to lighter days'}.
-                          <button className="ml-1 text-blue-300 underline underline-offset-2 font-medium">
+                          <button className="ml-1 text-[#43C4EF] underline underline-offset-2 font-medium">
                             Show options
                           </button>
                         </p>

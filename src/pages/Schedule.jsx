@@ -104,7 +104,7 @@ export default function Schedule() {
           <Sparkles size={14} className="text-white shrink-0" />
           <p className="text-xs text-white/90 flex-1">
             <strong className="text-white">FlowIQ:</strong> I detected a scheduling conflict on CNC Mill #1 tomorrow. WO-1003 and WO-1001 overlap by 2h.
-            <button className="ml-1 text-blue-300 underline underline-offset-2 font-medium">View suggestion</button>
+            <button className="ml-1 text-[#43C4EF] underline underline-offset-2 font-medium">View suggestion</button>
           </p>
           <button onClick={() => setShowFlowIQHint(false)} className="text-white/50 hover:text-white">
             &times;

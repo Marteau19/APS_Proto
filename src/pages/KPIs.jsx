@@ -38,10 +38,10 @@ export default function KPIs() {
             and 1 unplanned downtime (CNC Lathe #1). Resolving the material issue would recover ~4 points.
           </p>
           <div className="flex gap-2 mt-2">
-            <button className="text-xs text-blue-300 font-medium underline underline-offset-2">
+            <button className="text-xs text-[#43C4EF] font-medium underline underline-offset-2">
               View root cause analysis
             </button>
-            <button className="text-xs text-blue-300 font-medium underline underline-offset-2">
+            <button className="text-xs text-[#43C4EF] font-medium underline underline-offset-2">
               Suggest improvements
             </button>
           </div>
