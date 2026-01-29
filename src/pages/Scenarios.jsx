@@ -33,7 +33,7 @@ export default function Scenarios() {
           >
             <Plus size={14} /> New scenario
           </button>
-          <button className="flowiq-card flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-white font-medium hover:opacity-90">
+          <button className="flowiq-card flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-[#051E40] font-medium hover:opacity-90">
             <Sparkles size={12} /> Generate with FlowIQ
           </button>
         </div>
@@ -41,13 +41,13 @@ export default function Scenarios() {
 
       {/* FlowIQ suggestion */}
       <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
-        <Sparkles size={16} className="text-white mt-0.5 shrink-0" />
+        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0" />
         <div>
-          <p className="text-sm text-white/90">
-            <strong className="text-white">FlowIQ:</strong> I've generated 2 what-if scenarios based on your current exceptions.
+          <p className="text-sm text-[#051E40]/90">
+            <strong className="text-[#051E40]">FlowIQ:</strong> I've generated 2 what-if scenarios based on your current exceptions.
             "Rush WO-1002 + Overtime" shows the best OTIF improvement (+5 points) with moderate cost impact.
           </p>
-          <button className="text-xs text-[#43C4EF] font-medium mt-1 underline underline-offset-2">
+          <button className="text-xs text-[#051E40] font-medium mt-1 underline underline-offset-2">
             Compare both scenarios below
           </button>
         </div>

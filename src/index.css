@@ -58,8 +58,8 @@
   animation: flowiq-pulse 2s ease-in-out infinite;
 }
 .flowiq-card {
-  background: linear-gradient(135deg, #051E40 0%, #0a3260 55%, #051E40 100%);
-  border: 1px solid rgba(67, 196, 239, 0.25);
+  background: #43C4EF;
+  border: 1px solid rgba(5, 30, 64, 0.12);
 }
 
 @keyframes fade-in {
