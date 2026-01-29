@@ -30,18 +30,18 @@ export default function KPIs() {
       </div>
 
       {/* FlowIQ Insight */}
-      <div className="bg-violet-50 border border-violet-200 rounded-xl px-5 py-4 flex items-start gap-3">
-        <Sparkles size={16} className="text-violet-500 mt-0.5 shrink-0" />
+      <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
+        <Sparkles size={16} className="text-white mt-0.5 shrink-0" />
         <div>
-          <p className="text-sm text-violet-700">
-            <strong>FlowIQ:</strong> OTIF has dropped 6 points over the past week. Root causes: 2 material delays (SS-316 shortage)
+          <p className="text-sm text-white/90">
+            <strong className="text-white">FlowIQ:</strong> OTIF has dropped 6 points over the past week. Root causes: 2 material delays (SS-316 shortage)
             and 1 unplanned downtime (CNC Lathe #1). Resolving the material issue would recover ~4 points.
           </p>
           <div className="flex gap-2 mt-2">
-            <button className="text-xs text-violet-600 font-medium underline underline-offset-2">
+            <button className="text-xs text-blue-300 font-medium underline underline-offset-2">
               View root cause analysis
             </button>
-            <button className="text-xs text-violet-600 font-medium underline underline-offset-2">
+            <button className="text-xs text-blue-300 font-medium underline underline-offset-2">
               Suggest improvements
             </button>
           </div>

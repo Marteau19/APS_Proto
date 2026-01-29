@@ -152,7 +152,7 @@ function CommandPalette({ onClose }) {
               onClick={onClose}
             >
               {s.type === 'flowiq' ? (
-                <Sparkles size={16} className="text-violet-500" />
+                <Sparkles size={16} className="text-indigo-500" />
               ) : s.type === 'navigate' ? (
                 <ChevronRight size={16} className="text-slate-400" />
               ) : (

@@ -49,7 +49,7 @@ export default function OrderDetail() {
             <Link to="/schedule" className="text-xs px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">
               View on schedule
             </Link>
-            <Link to="/scenarios" className="text-xs px-3 py-1.5 rounded-lg bg-violet-50 border border-violet-200 text-violet-700 hover:bg-violet-100 flex items-center gap-1.5">
+            <Link to="/scenarios" className="flowiq-card text-xs px-3 py-1.5 rounded-lg text-white font-medium hover:opacity-90 flex items-center gap-1.5">
               <Sparkles size={12} /> What-if
             </Link>
           </div>
@@ -96,32 +96,32 @@ export default function OrderDetail() {
 
       {/* FlowIQ Context Card */}
       {(relatedAlerts.length > 0 || order.status === 'at-risk' || order.status === 'late') && (
-        <div className="bg-violet-50 border border-violet-200 rounded-xl p-5">
+        <div className="flowiq-card rounded-xl p-5">
           <div className="flex items-start gap-3">
-            <Sparkles size={18} className="text-violet-500 mt-0.5 shrink-0" />
+            <Sparkles size={18} className="text-white mt-0.5 shrink-0" />
             <div>
-              <h4 className="text-sm font-semibold text-violet-900 mb-1">FlowIQ Analysis</h4>
+              <h4 className="text-sm font-semibold text-white mb-1">FlowIQ Analysis</h4>
               {order.status === 'late' ? (
-                <p className="text-sm text-violet-700">
+                <p className="text-sm text-white/90">
                   This order is past due by {Math.abs(daysUntilDue)} day(s). Remaining operations (inspection + packaging)
                   can be expedited to ship by end of day if prioritized now. I recommend fast-tracking inspection and using express logistics.
                 </p>
               ) : order.status === 'at-risk' ? (
-                <p className="text-sm text-violet-700">
+                <p className="text-sm text-white/90">
                   Material shortage (SS-316 steel) is the primary risk. If the expedited supplier delivery arrives tomorrow,
                   we can still meet the deadline with 4h overtime on welding. Otherwise, need to negotiate a 1-day extension with {order.customer}.
                 </p>
               ) : (
-                <p className="text-sm text-violet-700">
+                <p className="text-sm text-white/90">
                   This order has {relatedAlerts.length} related alert(s) that may affect delivery. Operations are currently on track,
                   but monitoring is recommended.
                 </p>
               )}
               <div className="flex gap-2 mt-3">
-                <button className="text-xs px-3 py-1.5 rounded-lg bg-violet-600 text-white font-medium hover:bg-violet-700">
+                <button className="text-xs px-3 py-1.5 rounded-lg bg-white text-slate-900 font-medium hover:bg-white/90">
                   Simulate expedite
                 </button>
-                <button className="text-xs px-3 py-1.5 rounded-lg border border-violet-300 text-violet-700 font-medium hover:bg-violet-100">
+                <button className="text-xs px-3 py-1.5 rounded-lg border border-white/30 text-white font-medium hover:bg-white/10">
                   Show alternatives
                 </button>
               </div>
