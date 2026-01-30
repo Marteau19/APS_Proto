@@ -147,7 +147,7 @@ export default function Alerts() {
                     {/* FlowIQ suggestion */}
                     <div className="flowiq-card rounded-lg p-4">
                       <div className="flex items-start gap-2">
-                        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0" />
+                        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0 flowiq-icon" />
                         <div>
                           <h4 className="text-xs font-semibold text-[#051E40] mb-1">FlowIQ Recommendation</h4>
                           <p className="text-sm text-[#051E40]/90">{alert.flowiqSuggestion}</p>
