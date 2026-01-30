@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X, Send, Sparkles, ArrowRight, Zap, TrendingUp, AlertCircle } from 'lucide-react';
+import TypewriterText from './TypewriterText';
 
 const preloadedMessages = [
   {
@@ -68,7 +69,7 @@ export default function FlowIQPanel({ onClose }) {
                         {insight.icon === 'alert' && <AlertCircle size={14} className="text-red-300 mt-0.5 shrink-0" />}
                         {insight.icon === 'trend' && <TrendingUp size={14} className="text-amber-300 mt-0.5 shrink-0" />}
                         {insight.icon === 'action' && <Zap size={14} className="text-white mt-0.5 shrink-0" />}
-                        <p className="text-xs text-white/90 leading-relaxed">{insight.text}</p>
+                        <p className="text-xs text-white/90 leading-relaxed"><TypewriterText text={insight.text} delay={400 + j * 800} /></p>
                       </div>
                     ))}
                   </div>

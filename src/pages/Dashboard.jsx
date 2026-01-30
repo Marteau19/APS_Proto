@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { orders, alerts, kpis, getStatusColor, getSeverityBadge } from '../data/mockData';
 import { format } from 'date-fns';
+import TypewriterText from '../components/TypewriterText';
 
 const trendIcon = {
   up: <ArrowUpRight size={14} />,
@@ -27,11 +28,9 @@ export default function Dashboard() {
           <div className="flex-1">
             <h2 className="text-sm font-semibold text-white mb-1">FlowIQ Daily Brief</h2>
             <p className="text-sm text-white/90 leading-relaxed">
-              You have <strong className="text-white">{criticalAlerts.length} critical alerts</strong> and <strong className="text-white">{atRiskOrders.length} orders at risk</strong>.
-              Top priority: <strong className="text-white">WO-1008</strong> is past due — expediting could recover it today.
-              CNC Lathe #1 is down, affecting 2 orders. I have rerouting options ready.
+              <TypewriterText text={`You have ${criticalAlerts.length} critical alerts and ${atRiskOrders.length} orders at risk. Top priority: WO-1008 is past due — expediting could recover it today. CNC Lathe #1 is down, affecting 2 orders. I have rerouting options ready.`} />
             </p>
-            <div className="flex gap-2 mt-3">
+            <div className="flex gap-2 mt-3 flowiq-actions-reveal">
               <Link to="/alerts" className="inline-flex items-center gap-1.5 text-xs font-medium text-indigo-700 bg-white px-3 py-1.5 rounded-lg hover:bg-white/90 transition-colors">
                 View alerts <ArrowRight size={12} />
               </Link>

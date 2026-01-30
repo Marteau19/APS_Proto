@@ -8,6 +8,7 @@ import {
   Tooltip, ResponsiveContainer, Legend, ReferenceLine
 } from 'recharts';
 import { kpis, kpiHistory } from '../data/mockData';
+import TypewriterText from '../components/TypewriterText';
 
 const trendIcons = {
   up: <TrendingUp size={14} />,
@@ -34,10 +35,10 @@ export default function KPIs() {
         <Sparkles size={16} className="text-white mt-0.5 shrink-0 flowiq-icon" />
         <div>
           <p className="text-sm text-white/90">
-            <strong className="text-white">FlowIQ:</strong> OTIF has dropped 6 points over the past week. Root causes: 2 material delays (SS-316 shortage)
-            and 1 unplanned downtime (CNC Lathe #1). Resolving the material issue would recover ~4 points.
+            <strong className="text-white">FlowIQ:</strong>{' '}
+            <TypewriterText text="OTIF has dropped 6 points over the past week. Root causes: 2 material delays (SS-316 shortage) and 1 unplanned downtime (CNC Lathe #1). Resolving the material issue would recover ~4 points." />
           </p>
-          <div className="flex gap-2 mt-2">
+          <div className="flex gap-2 mt-2 flowiq-actions-reveal">
             <button className="text-xs text-white font-medium underline underline-offset-2">
               View root cause analysis
             </button>
