@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { alerts, getSeverityColor, getSeverityBadge } from '../data/mockData';
 import { format, formatDistanceToNow } from 'date-fns';
+import TypewriterText from '../components/TypewriterText';
 
 const typeIcons = {
   'machine-down': Wrench,
@@ -150,8 +151,8 @@ export default function Alerts() {
                         <Sparkles size={16} className="text-white mt-0.5 shrink-0 flowiq-icon" />
                         <div>
                           <h4 className="text-xs font-semibold text-white mb-1">FlowIQ Recommendation</h4>
-                          <p className="text-sm text-white/90">{alert.flowiqSuggestion}</p>
-                          <div className="flex gap-2 mt-3">
+                          <p className="text-sm text-white/90"><TypewriterText text={alert.flowiqSuggestion} /></p>
+                          <div className="flex gap-2 mt-3 flowiq-actions-reveal">
                             <button className="text-xs px-3 py-1.5 rounded-lg bg-white text-indigo-700 font-medium hover:bg-white/90 transition-colors">
                               Apply suggestion
                             </button>

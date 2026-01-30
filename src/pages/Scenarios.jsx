@@ -4,6 +4,7 @@ import {
   Copy, Trash2, ChevronRight, TrendingUp, TrendingDown, Minus
 } from 'lucide-react';
 import { scenarios } from '../data/mockData';
+import TypewriterText from '../components/TypewriterText';
 
 const kpiLabels = {
   otif: { label: 'OTIF', unit: '%', target: 95, better: 'higher' },
@@ -44,10 +45,10 @@ export default function Scenarios() {
         <Sparkles size={16} className="text-white mt-0.5 shrink-0 flowiq-icon" />
         <div>
           <p className="text-sm text-white/90">
-            <strong className="text-white">FlowIQ:</strong> I've generated 2 what-if scenarios based on your current exceptions.
-            "Rush WO-1002 + Overtime" shows the best OTIF improvement (+5 points) with moderate cost impact.
+            <strong className="text-white">FlowIQ:</strong>{' '}
+            <TypewriterText text={`I've generated 2 what-if scenarios based on your current exceptions. "Rush WO-1002 + Overtime" shows the best OTIF improvement (+5 points) with moderate cost impact.`} />
           </p>
-          <button className="text-xs text-white font-medium mt-1 underline underline-offset-2">
+          <button className="text-xs text-white font-medium mt-1 underline underline-offset-2 flowiq-actions-reveal">
             Compare both scenarios below
           </button>
         </div>

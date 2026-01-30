@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { orders, alerts, getStatusColor, getPriorityColor } from '../data/mockData';
 import { format, differenceInDays } from 'date-fns';
+import TypewriterText from '../components/TypewriterText';
 
 export default function OrderDetail() {
   const { id } = useParams();
@@ -103,21 +104,18 @@ export default function OrderDetail() {
               <h4 className="text-sm font-semibold text-white mb-1">FlowIQ Analysis</h4>
               {order.status === 'late' ? (
                 <p className="text-sm text-white/90">
-                  This order is past due by {Math.abs(daysUntilDue)} day(s). Remaining operations (inspection + packaging)
-                  can be expedited to ship by end of day if prioritized now. I recommend fast-tracking inspection and using express logistics.
+                  <TypewriterText text={`This order is past due by ${Math.abs(daysUntilDue)} day(s). Remaining operations (inspection + packaging) can be expedited to ship by end of day if prioritized now. I recommend fast-tracking inspection and using express logistics.`} />
                 </p>
               ) : order.status === 'at-risk' ? (
                 <p className="text-sm text-white/90">
-                  Material shortage (SS-316 steel) is the primary risk. If the expedited supplier delivery arrives tomorrow,
-                  we can still meet the deadline with 4h overtime on welding. Otherwise, need to negotiate a 1-day extension with {order.customer}.
+                  <TypewriterText text={`Material shortage (SS-316 steel) is the primary risk. If the expedited supplier delivery arrives tomorrow, we can still meet the deadline with 4h overtime on welding. Otherwise, need to negotiate a 1-day extension with ${order.customer}.`} />
                 </p>
               ) : (
                 <p className="text-sm text-white/90">
-                  This order has {relatedAlerts.length} related alert(s) that may affect delivery. Operations are currently on track,
-                  but monitoring is recommended.
+                  <TypewriterText text={`This order has ${relatedAlerts.length} related alert(s) that may affect delivery. Operations are currently on track, but monitoring is recommended.`} />
                 </p>
               )}
-              <div className="flex gap-2 mt-3">
+              <div className="flex gap-2 mt-3 flowiq-actions-reveal">
                 <button className="text-xs px-3 py-1.5 rounded-lg bg-white text-indigo-700 font-medium hover:bg-white/90">
                   Simulate expedite
                 </button>

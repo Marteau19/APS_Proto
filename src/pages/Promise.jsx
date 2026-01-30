@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { promiseRequests } from '../data/mockData';
 import { format } from 'date-fns';
+import TypewriterText from '../components/TypewriterText';
 
 export default function Promise() {
   const [selectedRequest, setSelectedRequest] = useState(promiseRequests[0].id);
@@ -26,8 +27,8 @@ export default function Promise() {
       <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
         <Sparkles size={16} className="text-white mt-0.5 shrink-0 flowiq-icon" />
         <p className="text-sm text-white/90">
-          <strong className="text-white">FlowIQ:</strong> PR-002 (Turbine Bracket for Delta Aero) cannot be fulfilled by the requested date with current capacity.
-          CTP shows it's feasible by {format(promiseRequests[1].ctpResult.date, 'MMM dd')} with overtime. Want me to simulate the impact?
+          <strong className="text-white">FlowIQ:</strong>{' '}
+          <TypewriterText text={`PR-002 (Turbine Bracket for Delta Aero) cannot be fulfilled by the requested date with current capacity. CTP shows it's feasible by ${format(promiseRequests[1].ctpResult.date, 'MMM dd')} with overtime. Want me to simulate the impact?`} />
         </p>
       </div>
 
