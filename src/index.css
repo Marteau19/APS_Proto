@@ -53,7 +53,7 @@
   50% { box-shadow: 0 0 0 8px rgba(99, 102, 241, 0); }
 }
 .flowiq-pulse {
-  animation: flowiq-pulse 2s ease-in-out infinite;
+  animation: flowiq-pulse 2s ease-in-out forwards;
 }
 
 .flowiq-card {
@@ -63,7 +63,7 @@
   background-size: 250% 100%, 100% 100%;
   border: none;
   box-shadow: 0 8px 32px -8px rgba(99, 102, 241, 0.5);
-  animation: flowiq-shine 5s ease-in-out infinite, flowiq-glow 3s ease-in-out infinite;
+  animation: flowiq-shine 5s ease-in-out forwards, flowiq-glow 3s ease-in-out forwards;
 }
 
 @keyframes flowiq-glow {
