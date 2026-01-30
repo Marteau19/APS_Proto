@@ -38,14 +38,14 @@ export default function FlowIQPanel({ onClose }) {
     <div className="w-96 bg-white border-l border-slate-200 flex flex-col shrink-0 animate-slide-in-right">
       {/* Header */}
       <div className="px-4 py-3 flowiq-card flex items-center gap-3">
-        <div className="w-8 h-8 rounded-lg bg-[#051E40]/10 flex items-center justify-center">
-          <Sparkles size={16} className="text-[#051E40] flowiq-icon" />
+        <div className="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center">
+          <Sparkles size={16} className="text-white flowiq-icon" />
         </div>
         <div>
-          <h2 className="text-sm font-semibold text-[#051E40]">FlowIQ</h2>
-          <p className="text-[11px] text-[#051E40]/60">AI Scheduling Assistant</p>
+          <h2 className="text-sm font-semibold text-white">FlowIQ</h2>
+          <p className="text-[11px] text-white/60">AI Scheduling Assistant</p>
         </div>
-        <button onClick={onClose} className="ml-auto p-1 text-[#051E40]/50 hover:text-[#051E40]">
+        <button onClick={onClose} className="ml-auto p-1 text-white/50 hover:text-white">
           <X size={16} />
         </button>
       </div>
@@ -65,16 +65,16 @@ export default function FlowIQPanel({ onClose }) {
                   <div className="space-y-2">
                     {msg.insights.map((insight, j) => (
                       <div key={j} className="flex gap-2 p-2.5 flowiq-card rounded-lg">
-                        {insight.icon === 'alert' && <AlertCircle size={14} className="text-red-700 mt-0.5 shrink-0" />}
-                        {insight.icon === 'trend' && <TrendingUp size={14} className="text-amber-700 mt-0.5 shrink-0" />}
-                        {insight.icon === 'action' && <Zap size={14} className="text-[#051E40] mt-0.5 shrink-0" />}
-                        <p className="text-xs text-[#051E40]/90 leading-relaxed">{insight.text}</p>
+                        {insight.icon === 'alert' && <AlertCircle size={14} className="text-red-300 mt-0.5 shrink-0" />}
+                        {insight.icon === 'trend' && <TrendingUp size={14} className="text-amber-300 mt-0.5 shrink-0" />}
+                        {insight.icon === 'action' && <Zap size={14} className="text-white mt-0.5 shrink-0" />}
+                        <p className="text-xs text-white/90 leading-relaxed">{insight.text}</p>
                       </div>
                     ))}
                   </div>
                 )}
                 {msg.action && (
-                  <button className="flex items-center gap-1.5 text-xs text-[#051E40] font-medium hover:text-[#051E40]/80 mt-1 underline underline-offset-2">
+                  <button className="flex items-center gap-1.5 text-xs text-indigo-600 font-medium hover:text-indigo-500 mt-1 underline underline-offset-2">
                     {msg.action} <ArrowRight size={12} />
                   </button>
                 )}
@@ -97,7 +97,7 @@ export default function FlowIQPanel({ onClose }) {
                   getSimulatedResponse(q),
                 ]);
               }}
-              className="text-[11px] px-2.5 py-1 rounded-full border border-[#051E40]/25 text-[#051E40] hover:bg-[#051E40]/10 transition-colors font-medium"
+              className="text-[11px] px-2.5 py-1 rounded-full border border-indigo-300 text-indigo-600 hover:bg-indigo-50 transition-colors font-medium"
             >
               {q}
             </button>
@@ -117,7 +117,7 @@ export default function FlowIQPanel({ onClose }) {
           />
           <button
             onClick={handleSend}
-            className="p-1.5 rounded-md bg-[#051E40] text-white hover:bg-[#051E40]/80 transition-colors"
+            className="p-1.5 rounded-md bg-indigo-600 text-white hover:bg-indigo-500 transition-colors"
           >
             <Send size={14} />
           </button>
