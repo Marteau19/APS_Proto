@@ -147,18 +147,18 @@ export default function Alerts() {
                     {/* FlowIQ suggestion */}
                     <div className="flowiq-card rounded-lg p-4">
                       <div className="flex items-start gap-2">
-                        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0 flowiq-icon" />
+                        <Sparkles size={16} className="text-white mt-0.5 shrink-0 flowiq-icon" />
                         <div>
-                          <h4 className="text-xs font-semibold text-[#051E40] mb-1">FlowIQ Recommendation</h4>
-                          <p className="text-sm text-[#051E40]/90">{alert.flowiqSuggestion}</p>
+                          <h4 className="text-xs font-semibold text-white mb-1">FlowIQ Recommendation</h4>
+                          <p className="text-sm text-white/90">{alert.flowiqSuggestion}</p>
                           <div className="flex gap-2 mt-3">
-                            <button className="text-xs px-3 py-1.5 rounded-lg bg-[#051E40] text-white font-medium hover:bg-[#051E40]/90 transition-colors">
+                            <button className="text-xs px-3 py-1.5 rounded-lg bg-white text-indigo-700 font-medium hover:bg-white/90 transition-colors">
                               Apply suggestion
                             </button>
-                            <button className="text-xs px-3 py-1.5 rounded-lg border border-[#051E40]/30 text-[#051E40] font-medium hover:bg-[#051E40]/10 transition-colors">
+                            <button className="text-xs px-3 py-1.5 rounded-lg border border-white/30 text-white font-medium hover:bg-white/10 transition-colors">
                               Simulate first
                             </button>
-                            <button className="text-xs px-3 py-1.5 rounded-lg text-[#051E40]/70 font-medium hover:bg-[#051E40]/10 transition-colors">
+                            <button className="text-xs px-3 py-1.5 rounded-lg text-white/70 font-medium hover:bg-white/10 transition-colors">
                               Dismiss
                             </button>
                           </div>

@@ -57,7 +57,7 @@ export default function Layout() {
         <div className="mt-auto flex flex-col gap-1 items-center">
           <button
             onClick={() => setFlowiqOpen(!flowiqOpen)}
-            className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#43C4EF] text-[#051E40] hover:bg-[#43C4EF]/80 transition-colors flowiq-pulse"
+            className="w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-blue-500 text-white hover:opacity-90 transition-all flowiq-pulse"
             title="FlowIQ Assistant"
           >
             <Sparkles size={22} />
@@ -152,7 +152,7 @@ function CommandPalette({ onClose }) {
               onClick={onClose}
             >
               {s.type === 'flowiq' ? (
-                <Sparkles size={16} className="text-[#43C4EF]" />
+                <Sparkles size={16} className="text-violet-500" />
               ) : s.type === 'navigate' ? (
                 <ChevronRight size={16} className="text-slate-400" />
               ) : (

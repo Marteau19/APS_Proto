@@ -49,7 +49,7 @@ export default function OrderDetail() {
             <Link to="/schedule" className="text-xs px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50">
               View on schedule
             </Link>
-            <Link to="/scenarios" className="flowiq-card text-xs px-3 py-1.5 rounded-lg text-[#051E40] font-medium hover:opacity-90 flex items-center gap-1.5">
+            <Link to="/scenarios" className="flowiq-card text-xs px-3 py-1.5 rounded-lg text-white font-medium hover:opacity-90 flex items-center gap-1.5">
               <Sparkles size={12} /> What-if
             </Link>
           </div>
@@ -98,30 +98,30 @@ export default function OrderDetail() {
       {(relatedAlerts.length > 0 || order.status === 'at-risk' || order.status === 'late') && (
         <div className="flowiq-card rounded-xl p-5">
           <div className="flex items-start gap-3">
-            <Sparkles size={18} className="text-[#051E40] mt-0.5 shrink-0 flowiq-icon" />
+            <Sparkles size={18} className="text-white mt-0.5 shrink-0 flowiq-icon" />
             <div>
-              <h4 className="text-sm font-semibold text-[#051E40] mb-1">FlowIQ Analysis</h4>
+              <h4 className="text-sm font-semibold text-white mb-1">FlowIQ Analysis</h4>
               {order.status === 'late' ? (
-                <p className="text-sm text-[#051E40]/90">
+                <p className="text-sm text-white/90">
                   This order is past due by {Math.abs(daysUntilDue)} day(s). Remaining operations (inspection + packaging)
                   can be expedited to ship by end of day if prioritized now. I recommend fast-tracking inspection and using express logistics.
                 </p>
               ) : order.status === 'at-risk' ? (
-                <p className="text-sm text-[#051E40]/90">
+                <p className="text-sm text-white/90">
                   Material shortage (SS-316 steel) is the primary risk. If the expedited supplier delivery arrives tomorrow,
                   we can still meet the deadline with 4h overtime on welding. Otherwise, need to negotiate a 1-day extension with {order.customer}.
                 </p>
               ) : (
-                <p className="text-sm text-[#051E40]/90">
+                <p className="text-sm text-white/90">
                   This order has {relatedAlerts.length} related alert(s) that may affect delivery. Operations are currently on track,
                   but monitoring is recommended.
                 </p>
               )}
               <div className="flex gap-2 mt-3">
-                <button className="text-xs px-3 py-1.5 rounded-lg bg-[#051E40] text-white font-medium hover:bg-[#051E40]/90">
+                <button className="text-xs px-3 py-1.5 rounded-lg bg-white text-indigo-700 font-medium hover:bg-white/90">
                   Simulate expedite
                 </button>
-                <button className="text-xs px-3 py-1.5 rounded-lg border border-[#051E40]/30 text-[#051E40] font-medium hover:bg-[#051E40]/10">
+                <button className="text-xs px-3 py-1.5 rounded-lg border border-white/30 text-white font-medium hover:bg-white/10">
                   Show alternatives
                 </button>
               </div>

@@ -92,7 +92,7 @@ export default function Schedule() {
           Filters
         </button>
 
-        <button className="flowiq-card flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-[#051E40] font-medium hover:opacity-90">
+        <button className="flowiq-card flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-white font-medium hover:opacity-90">
           <Sparkles size={12} />
           Optimize
         </button>
@@ -101,12 +101,12 @@ export default function Schedule() {
       {/* FlowIQ inline hint */}
       {showFlowIQHint && (
         <div className="mx-4 mt-3 flex items-center gap-3 px-4 py-2.5 flowiq-card rounded-lg animate-fade-in">
-          <Sparkles size={14} className="text-[#051E40] shrink-0 flowiq-icon" />
-          <p className="text-xs text-[#051E40]/90 flex-1">
-            <strong className="text-[#051E40]">FlowIQ:</strong> I detected a scheduling conflict on CNC Mill #1 tomorrow. WO-1003 and WO-1001 overlap by 2h.
-            <button className="ml-1 text-[#051E40] underline underline-offset-2 font-medium">View suggestion</button>
+          <Sparkles size={14} className="text-white shrink-0 flowiq-icon" />
+          <p className="text-xs text-white/90 flex-1">
+            <strong className="text-white">FlowIQ:</strong> I detected a scheduling conflict on CNC Mill #1 tomorrow. WO-1003 and WO-1001 overlap by 2h.
+            <button className="ml-1 text-white underline underline-offset-2 font-medium">View suggestion</button>
           </p>
-          <button onClick={() => setShowFlowIQHint(false)} className="text-[#051E40]/40 hover:text-[#051E40]">
+          <button onClick={() => setShowFlowIQHint(false)} className="text-white/50 hover:text-white">
             &times;
           </button>
         </div>
