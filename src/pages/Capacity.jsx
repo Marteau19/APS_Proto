@@ -29,7 +29,7 @@ export default function Capacity() {
 
       {/* FlowIQ Insight */}
       <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
-        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0" />
+        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0 flowiq-icon" />
         <div>
           <p className="text-sm text-[#051E40]/90">
             <strong className="text-[#051E40]">Bottleneck detected:</strong> Paint Line 1 is at 135% capacity for days +2 to +4.
@@ -168,7 +168,7 @@ export default function Capacity() {
 
                     {isOverloaded && (
                       <div className="mt-4 flowiq-card rounded-lg p-3 flex items-start gap-2">
-                        <Sparkles size={14} className="text-[#051E40] mt-0.5 shrink-0" />
+                        <Sparkles size={14} className="text-[#051E40] mt-0.5 shrink-0 flowiq-icon" />
                         <p className="text-xs text-[#051E40]/90">
                           <strong className="text-[#051E40]">FlowIQ:</strong> This resource is overloaded. I can suggest load leveling
                           by shifting {isDown ? 'jobs to alternate resources' : 'lower-priority jobs to lighter days'}.

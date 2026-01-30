@@ -41,7 +41,7 @@ export default function Scenarios() {
 
       {/* FlowIQ suggestion */}
       <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
-        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0" />
+        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0 flowiq-icon" />
         <div>
           <p className="text-sm text-[#051E40]/90">
             <strong className="text-[#051E40]">FlowIQ:</strong> I've generated 2 what-if scenarios based on your current exceptions.

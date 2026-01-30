@@ -22,7 +22,7 @@ export default function Dashboard() {
       <div className="flowiq-card rounded-xl p-5">
         <div className="flex items-start gap-3">
           <div className="w-9 h-9 rounded-lg bg-[#051E40]/10 flex items-center justify-center shrink-0">
-            <Sparkles size={18} className="text-[#051E40]" />
+            <Sparkles size={18} className="text-[#051E40] flowiq-icon" />
           </div>
           <div className="flex-1">
             <h2 className="text-sm font-semibold text-[#051E40] mb-1">FlowIQ Daily Brief</h2>

@@ -39,7 +39,7 @@ export default function FlowIQPanel({ onClose }) {
       {/* Header */}
       <div className="px-4 py-3 flowiq-card flex items-center gap-3">
         <div className="w-8 h-8 rounded-lg bg-[#051E40]/10 flex items-center justify-center">
-          <Sparkles size={16} className="text-[#051E40]" />
+          <Sparkles size={16} className="text-[#051E40] flowiq-icon" />
         </div>
         <div>
           <h2 className="text-sm font-semibold text-[#051E40]">FlowIQ</h2>

@@ -24,7 +24,7 @@ export default function Promise() {
 
       {/* FlowIQ insight */}
       <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
-        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0" />
+        <Sparkles size={16} className="text-[#051E40] mt-0.5 shrink-0 flowiq-icon" />
         <p className="text-sm text-[#051E40]/90">
           <strong className="text-[#051E40]">FlowIQ:</strong> PR-002 (Turbine Bracket for Delta Aero) cannot be fulfilled by the requested date with current capacity.
           CTP shows it's feasible by {format(promiseRequests[1].ctpResult.date, 'MMM dd')} with overtime. Want me to simulate the impact?

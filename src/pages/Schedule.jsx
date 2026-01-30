@@ -101,7 +101,7 @@ export default function Schedule() {
       {/* FlowIQ inline hint */}
       {showFlowIQHint && (
         <div className="mx-4 mt-3 flex items-center gap-3 px-4 py-2.5 flowiq-card rounded-lg animate-fade-in">
-          <Sparkles size={14} className="text-[#051E40] shrink-0" />
+          <Sparkles size={14} className="text-[#051E40] shrink-0 flowiq-icon" />
           <p className="text-xs text-[#051E40]/90 flex-1">
             <strong className="text-[#051E40]">FlowIQ:</strong> I detected a scheduling conflict on CNC Mill #1 tomorrow. WO-1003 and WO-1001 overlap by 2h.
             <button className="ml-1 text-[#051E40] underline underline-offset-2 font-medium">View suggestion</button>
