@@ -9,6 +9,7 @@ import Capacity from './pages/Capacity';
 import Scenarios from './pages/Scenarios';
 import KPIs from './pages/KPIs';
 import Promise from './pages/Promise';
+import Adaptive from './pages/Adaptive';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/scenarios" element={<Scenarios />} />
           <Route path="/kpis" element={<KPIs />} />
           <Route path="/promise" element={<Promise />} />
+          <Route path="/adaptive" element={<Adaptive />} />
         </Route>
       </Routes>
     </HashRouter>

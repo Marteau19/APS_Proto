@@ -28,7 +28,7 @@ export default function Capacity() {
         </button>
       </div>
 
-      {/* FlowIQ Insight */}
+      {/* SyncIQ Insight */}
       <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
         <Sparkles size={16} className="text-white mt-0.5 shrink-0 flowiq-icon" />
         <div>
@@ -171,7 +171,7 @@ export default function Capacity() {
                       <div className="mt-4 flowiq-card rounded-lg p-3 flex items-start gap-2">
                         <Sparkles size={14} className="text-white mt-0.5 shrink-0 flowiq-icon" />
                         <p className="text-xs text-white/90">
-                          <strong className="text-white">FlowIQ:</strong>{' '}
+                          <strong className="text-white">SyncIQ:</strong>{' '}
                           <TypewriterText text={`This resource is overloaded. I can suggest load leveling by shifting ${isDown ? 'jobs to alternate resources' : 'lower-priority jobs to lighter days'}.`} />
                           <button className="ml-1 text-white underline underline-offset-2 font-medium flowiq-actions-reveal" style={{ display: 'inline' }}>
                             Show options

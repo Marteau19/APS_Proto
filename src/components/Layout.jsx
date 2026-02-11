@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, CalendarRange, AlertTriangle, ClipboardList,
   BarChart3, GitBranch, Gauge, Handshake, Sparkles, X, Send,
-  ChevronRight, Search, Bell, User
+  ChevronRight, Search, Bell, User, Brain
 } from 'lucide-react';
 import FlowIQPanel from './FlowIQPanel';
 
@@ -16,6 +16,7 @@ const navItems = [
   { to: '/scenarios', icon: GitBranch, label: 'Scenarios' },
   { to: '/kpis', icon: Gauge, label: 'KPIs' },
   { to: '/promise', icon: Handshake, label: 'Promise' },
+  { to: '/adaptive', icon: Brain, label: 'Adaptive' },
 ];
 
 export default function Layout() {
@@ -23,14 +24,14 @@ export default function Layout() {
   const [commandOpen, setCommandOpen] = useState(false);
   const location = useLocation();
 
-  const currentPage = navItems.find(n => n.to === location.pathname)?.label || 'FlowAPS';
+  const currentPage = navItems.find(n => n.to === location.pathname)?.label || 'SyncRun';
 
   return (
     <div className="flex h-screen overflow-hidden bg-slate-50">
       {/* Sidebar */}
       <aside className="w-20 bg-slate-900 flex flex-col items-center py-5 gap-1.5 shrink-0">
-        <div className="w-11 h-11 rounded-lg bg-primary-500 flex items-center justify-center mb-5">
-          <span className="text-white font-bold text-base">F</span>
+        <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center mb-5">
+          <span className="text-white font-bold text-base">S</span>
         </div>
 
         {navItems.map(({ to, icon: Icon, label, badge }) => (
@@ -58,7 +59,7 @@ export default function Layout() {
           <button
             onClick={() => setFlowiqOpen(!flowiqOpen)}
             className="w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-blue-500 text-white hover:opacity-90 transition-all flowiq-pulse"
-            title="FlowIQ Assistant"
+            title="SyncIQ Assistant"
           >
             <Sparkles size={22} />
           </button>
@@ -79,7 +80,7 @@ export default function Layout() {
             className="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 text-slate-400 text-sm hover:border-slate-300 hover:text-slate-500 transition-colors"
           >
             <Search size={16} />
-            <span>Search or ask FlowIQ...</span>
+            <span>Search or ask SyncIQ...</span>
             <kbd className="hidden sm:inline text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 font-mono">
               Ctrl+K
             </kbd>
@@ -101,7 +102,7 @@ export default function Layout() {
         </main>
       </div>
 
-      {/* FlowIQ Side Panel */}
+      {/* SyncIQ Side Panel */}
       {flowiqOpen && (
         <FlowIQPanel onClose={() => setFlowiqOpen(false)} />
       )}
@@ -119,10 +120,10 @@ function CommandPalette({ onClose }) {
 
   const suggestions = [
     { label: 'Show late orders', type: 'query' },
-    { label: 'What should I fix first?', type: 'flowiq' },
+    { label: 'What should I fix first?', type: 'synciq' },
     { label: 'Open WO-1002', type: 'navigate' },
     { label: 'Show CNC capacity this week', type: 'query' },
-    { label: 'Simulate rushing WO-1008', type: 'flowiq' },
+    { label: 'Simulate rushing WO-1008', type: 'synciq' },
     { label: 'Compare scenarios', type: 'navigate' },
   ].filter(s => !query || s.label.toLowerCase().includes(query.toLowerCase()));
 
@@ -138,7 +139,7 @@ function CommandPalette({ onClose }) {
           <input
             autoFocus
             className="flex-1 text-base outline-none bg-transparent placeholder-slate-400"
-            placeholder="Search orders, resources, or ask FlowIQ..."
+            placeholder="Search orders, resources, or ask SyncIQ..."
             value={query}
             onChange={e => setQuery(e.target.value)}
           />
@@ -151,7 +152,7 @@ function CommandPalette({ onClose }) {
               className="w-full flex items-center gap-3 px-5 py-3 text-base text-left hover:bg-slate-50 transition-colors"
               onClick={onClose}
             >
-              {s.type === 'flowiq' ? (
+              {s.type === 'synciq' ? (
                 <Sparkles size={16} className="text-violet-500" />
               ) : s.type === 'navigate' ? (
                 <ChevronRight size={16} className="text-slate-400" />
