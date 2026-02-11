@@ -95,13 +95,13 @@ export default function OrderDetail() {
         </div>
       </div>
 
-      {/* FlowIQ Context Card */}
+      {/* SyncIQ Context Card */}
       {(relatedAlerts.length > 0 || order.status === 'at-risk' || order.status === 'late') && (
         <div className="flowiq-card rounded-xl p-5">
           <div className="flex items-start gap-3">
             <Sparkles size={18} className="text-white mt-0.5 shrink-0 flowiq-icon" />
             <div>
-              <h4 className="text-sm font-semibold text-white mb-1">FlowIQ Analysis</h4>
+              <h4 className="text-sm font-semibold text-white mb-1">SyncIQ Analysis</h4>
               {order.status === 'late' ? (
                 <p className="text-sm text-white/90">
                   <TypewriterText text={`This order is past due by ${Math.abs(daysUntilDue)} day(s). Remaining operations (inspection + packaging) can be expedited to ship by end of day if prioritized now. I recommend fast-tracking inspection and using express logistics.`} />

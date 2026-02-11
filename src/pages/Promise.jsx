@@ -23,11 +23,11 @@ export default function Promise() {
         </button>
       </div>
 
-      {/* FlowIQ insight */}
+      {/* SyncIQ insight */}
       <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
         <Sparkles size={16} className="text-white mt-0.5 shrink-0 flowiq-icon" />
         <p className="text-sm text-white/90">
-          <strong className="text-white">FlowIQ:</strong>{' '}
+          <strong className="text-white">SyncIQ:</strong>{' '}
           <TypewriterText text={`PR-002 (Turbine Bracket for Delta Aero) cannot be fulfilled by the requested date with current capacity. CTP shows it's feasible by ${format(promiseRequests[1].ctpResult.date, 'MMM dd')} with overtime. Want me to simulate the impact?`} />
         </p>
       </div>
