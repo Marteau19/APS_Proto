@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import {
   AlertTriangle, ArrowRight, ArrowUpRight, ArrowDownRight, Minus,
-  Clock, CheckCircle2, XCircle, Package, Sparkles, TrendingUp, Brain, TrendingDown
+  Clock, CheckCircle2, XCircle, Package, Sparkles, TrendingUp
 } from 'lucide-react';
 import { orders, alerts, kpis, getStatusColor, getSeverityBadge } from '../data/mockData';
 import { format } from 'date-fns';
@@ -19,14 +19,14 @@ export default function Dashboard() {
 
   return (
     <div className="p-6 space-y-6 max-w-7xl mx-auto">
-      {/* SyncIQ Morning Brief */}
+      {/* FlowIQ Morning Brief */}
       <div className="flowiq-card rounded-xl p-5">
         <div className="flex items-start gap-3">
           <div className="w-9 h-9 rounded-lg bg-white/15 flex items-center justify-center shrink-0">
             <Sparkles size={18} className="text-white flowiq-icon" />
           </div>
           <div className="flex-1">
-            <h2 className="text-sm font-semibold text-white mb-1">SyncIQ Daily Brief</h2>
+            <h2 className="text-sm font-semibold text-white mb-1">FlowIQ Daily Brief</h2>
             <p className="text-sm text-white/90 leading-relaxed">
               <TypewriterText text={`You have ${criticalAlerts.length} critical alerts and ${atRiskOrders.length} orders at risk. Top priority: WO-1008 is past due — expediting could recover it today. CNC Lathe #1 is down, affecting 2 orders. I have rerouting options ready.`} />
             </p>
@@ -36,50 +36,6 @@ export default function Dashboard() {
               </Link>
               <Link to="/schedule" className="inline-flex items-center gap-1.5 text-xs font-medium text-white/80 hover:text-white">
                 Open schedule <ArrowRight size={12} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Adaptive Learning Summary */}
-      <div className="adaptive-card rounded-xl p-5">
-        <div className="flex items-start gap-3">
-          <div className="w-9 h-9 rounded-lg bg-white/15 flex items-center justify-center shrink-0">
-            <Brain size={18} className="text-white" />
-          </div>
-          <div className="flex-1">
-            <h2 className="text-sm font-semibold text-white mb-1">Adaptive Learning Status</h2>
-            <div className="grid grid-cols-3 gap-4 mt-3">
-              <div className="bg-white/10 rounded-lg p-3">
-                <p className="text-[10px] text-white/60 uppercase tracking-wider">Adaptation Score</p>
-                <div className="flex items-baseline gap-1.5 mt-1">
-                  <span className="text-2xl font-bold text-white">73%</span>
-                </div>
-                <div className="w-full h-1.5 bg-white/20 rounded-full mt-2 overflow-hidden">
-                  <div className="h-full rounded-full bg-white/80" style={{ width: '73%' }} />
-                </div>
-              </div>
-              <div className="bg-white/10 rounded-lg p-3">
-                <p className="text-[10px] text-white/60 uppercase tracking-wider">Learned Rules</p>
-                <div className="flex items-baseline gap-1.5 mt-1">
-                  <span className="text-2xl font-bold text-white">12</span>
-                  <span className="text-xs text-white/60">active</span>
-                </div>
-                <p className="text-[10px] text-white/50 mt-2">+3 this week</p>
-              </div>
-              <div className="bg-white/10 rounded-lg p-3">
-                <p className="text-[10px] text-white/60 uppercase tracking-wider">Manual Corrections</p>
-                <div className="flex items-baseline gap-1.5 mt-1">
-                  <span className="text-2xl font-bold text-white">12%</span>
-                  <TrendingDown size={14} className="text-emerald-300" />
-                </div>
-                <p className="text-[10px] text-white/50 mt-2">Down from 34% (3 months ago)</p>
-              </div>
-            </div>
-            <div className="flex gap-2 mt-3">
-              <Link to="/adaptive" className="inline-flex items-center gap-1.5 text-xs font-medium text-teal-900 bg-white px-3 py-1.5 rounded-lg hover:bg-white/90 transition-colors">
-                View learning details <ArrowRight size={12} />
               </Link>
             </div>
           </div>

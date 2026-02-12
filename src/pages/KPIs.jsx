@@ -30,12 +30,12 @@ export default function KPIs() {
         </div>
       </div>
 
-      {/* SyncIQ Insight */}
+      {/* FlowIQ Insight */}
       <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
         <Sparkles size={16} className="text-white mt-0.5 shrink-0 flowiq-icon" />
         <div>
           <p className="text-sm text-white/90">
-            <strong className="text-white">SyncIQ:</strong>{' '}
+            <strong className="text-white">FlowIQ:</strong>{' '}
             <TypewriterText text="OTIF has dropped 6 points over the past week. Root causes: 2 material delays (SS-316 shortage) and 1 unplanned downtime (CNC Lathe #1). Resolving the material issue would recover ~4 points." />
           </p>
           <div className="flex gap-2 mt-2 flowiq-actions-reveal">
