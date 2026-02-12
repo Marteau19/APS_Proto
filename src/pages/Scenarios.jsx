@@ -35,17 +35,17 @@ export default function Scenarios() {
             <Plus size={14} /> New scenario
           </button>
           <button className="flowiq-card flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-white font-medium hover:opacity-90">
-            <Sparkles size={12} /> Generate with SyncIQ
+            <Sparkles size={12} /> Generate with FlowIQ
           </button>
         </div>
       </div>
 
-      {/* SyncIQ suggestion */}
+      {/* FlowIQ suggestion */}
       <div className="flowiq-card rounded-xl px-5 py-4 flex items-start gap-3">
         <Sparkles size={16} className="text-white mt-0.5 shrink-0 flowiq-icon" />
         <div>
           <p className="text-sm text-white/90">
-            <strong className="text-white">SyncIQ:</strong>{' '}
+            <strong className="text-white">FlowIQ:</strong>{' '}
             <TypewriterText text={`I've generated 2 what-if scenarios based on your current exceptions. "Rush WO-1002 + Overtime" shows the best OTIF improvement (+5 points) with moderate cost impact.`} />
           </p>
           <button className="text-xs text-white font-medium mt-1 underline underline-offset-2 flowiq-actions-reveal">

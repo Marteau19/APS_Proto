@@ -145,12 +145,12 @@ export default function Alerts() {
                       </div>
                     </div>
 
-                    {/* SyncIQ suggestion */}
+                    {/* FlowIQ suggestion */}
                     <div className="flowiq-card rounded-lg p-4">
                       <div className="flex items-start gap-2">
                         <Sparkles size={16} className="text-white mt-0.5 shrink-0 flowiq-icon" />
                         <div>
-                          <h4 className="text-xs font-semibold text-white mb-1">SyncIQ Recommendation</h4>
+                          <h4 className="text-xs font-semibold text-white mb-1">FlowIQ Recommendation</h4>
                           <p className="text-sm text-white/90"><TypewriterText text={alert.flowiqSuggestion} /></p>
                           <div className="flex gap-2 mt-3 flowiq-actions-reveal">
                             <button className="text-xs px-3 py-1.5 rounded-lg bg-white text-indigo-700 font-medium hover:bg-white/90 transition-colors">
