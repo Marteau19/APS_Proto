@@ -5,7 +5,7 @@ import {
   CheckCircle2, Clock, Target, Plus, Minus, Eye, Lock, AlertTriangle
 } from 'lucide-react';
 import {
-  LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid,
+  ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, Legend, ReferenceLine, Area, AreaChart
 } from 'recharts';
 import { format, subDays, startOfDay } from 'date-fns';
@@ -215,16 +215,16 @@ export default function Adaptive() {
         <div className="bg-white rounded-xl border border-slate-200 p-5">
           <h3 className="text-sm font-semibold text-slate-900 mb-4">Adaptation Score & Learned Rules</h3>
           <ResponsiveContainer width="100%" height={240}>
-            <LineChart data={adaptationHistory}>
+            <ComposedChart data={adaptationHistory}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
               <XAxis dataKey="date" tick={{ fontSize: 10, fill: '#94a3b8' }} />
               <YAxis yAxisId="left" domain={[0, 100]} tick={{ fontSize: 10, fill: '#94a3b8' }} />
               <YAxis yAxisId="right" orientation="right" domain={[0, 15]} tick={{ fontSize: 10, fill: '#94a3b8' }} />
               <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }} />
-              <Line yAxisId="left" type="monotone" dataKey="adaptationScore" stroke="#14b8a6" strokeWidth={2} dot={{ r: 3 }} name="Adaptation Score %" />
               <Bar yAxisId="right" dataKey="learnedRules" fill="#99f6e4" radius={[4, 4, 0, 0]} name="Learned Rules" />
+              <Line yAxisId="left" type="monotone" dataKey="adaptationScore" stroke="#14b8a6" strokeWidth={2} dot={{ r: 3 }} name="Adaptation Score %" />
               <Legend wrapperStyle={{ fontSize: 11 }} />
-            </LineChart>
+            </ComposedChart>
           </ResponsiveContainer>
         </div>
       </div>
