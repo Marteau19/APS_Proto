@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Search, Filter, ArrowUpDown, ChevronRight,
-  ArrowUpRight, ArrowDownRight, Minus
+  ArrowUpRight, ArrowDownRight, Minus, Plus, X
 } from 'lucide-react';
-import { orders, getStatusColor, getPriorityColor } from '../data/mockData';
-import { format } from 'date-fns';
+import { orders as initialOrders, getStatusColor, getPriorityColor } from '../data/mockData';
+import { format, addDays, startOfDay } from 'date-fns';
 
 const statusFilters = ['all', 'late', 'at-risk', 'in-progress', 'on-track'];
 
@@ -13,8 +13,10 @@ export default function Orders() {
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [sortBy, setSortBy] = useState('dueDate');
+  const [ordersList, setOrdersList] = useState(initialOrders);
+  const [showAddModal, setShowAddModal] = useState(false);
 
-  const filtered = orders
+  const filtered = ordersList
     .filter(o => {
       if (statusFilter !== 'all' && o.status !== statusFilter) return false;
       if (search) {
@@ -34,11 +36,25 @@ export default function Orders() {
       return 0;
     });
 
+  const handleAddOrder = (newOrder) => {
+    setOrdersList(prev => [...prev, newOrder]);
+    setShowAddModal(false);
+  };
+
   return (
     <div className="p-6 max-w-6xl mx-auto space-y-4">
-      <div>
-        <h2 className="text-lg font-semibold text-slate-900">Orders</h2>
-        <p className="text-sm text-slate-500 mt-0.5">{orders.length} active work orders</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-lg font-semibold text-slate-900">Orders</h2>
+          <p className="text-sm text-slate-500 mt-0.5">{ordersList.length} active work orders</p>
+        </div>
+        <button
+          onClick={() => setShowAddModal(true)}
+          className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-500 text-white text-sm font-medium hover:bg-primary-600 transition-colors"
+        >
+          <Plus size={16} />
+          Add Order
+        </button>
       </div>
 
       {/* Toolbar */}
@@ -132,6 +148,153 @@ export default function Orders() {
             <ChevronRight size={16} className="text-slate-300 group-hover:text-slate-500 transition-colors" />
           </Link>
         ))}
+      </div>
+
+      {/* Add Order Modal */}
+      {showAddModal && (
+        <AddOrderModal
+          onClose={() => setShowAddModal(false)}
+          onAdd={handleAddOrder}
+          nextId={`WO-${1000 + ordersList.length + 1}`}
+        />
+      )}
+    </div>
+  );
+}
+
+function AddOrderModal({ onClose, onAdd, nextId }) {
+  const today = startOfDay(new Date());
+  const [form, setForm] = useState({
+    customer: '',
+    product: '',
+    qty: '',
+    priority: 'medium',
+    dueDate: format(addDays(today, 7), 'yyyy-MM-dd'),
+  });
+
+  const update = (field, value) => setForm(prev => ({ ...prev, [field]: value }));
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const dueDate = new Date(form.dueDate);
+    const newOrder = {
+      id: nextId,
+      customer: form.customer,
+      product: form.product,
+      qty: parseInt(form.qty, 10),
+      priority: form.priority,
+      status: 'on-track',
+      dueDate,
+      startDate: today,
+      progress: 0,
+      promised: dueDate,
+      operations: [],
+    };
+    onAdd(newOrder);
+  };
+
+  const isValid = form.customer && form.product && form.qty && parseInt(form.qty, 10) > 0;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+      <div
+        className="relative w-full max-w-md bg-white rounded-xl shadow-2xl border border-slate-200 animate-fade-in"
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+          <h3 className="text-base font-semibold text-slate-900">New Work Order</h3>
+          <button onClick={onClose} className="p-1 text-slate-400 hover:text-slate-600 transition-colors">
+            <X size={18} />
+          </button>
+        </div>
+
+        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-xs font-mono text-slate-400 bg-slate-50 px-2 py-1 rounded">{nextId}</span>
+            <span className="text-xs text-slate-400">will be assigned automatically</span>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">Customer</label>
+            <input
+              type="text"
+              value={form.customer}
+              onChange={e => update('customer', e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-200 transition-colors"
+              placeholder="e.g. Apex Motors"
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">Product</label>
+            <input
+              type="text"
+              value={form.product}
+              onChange={e => update('product', e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-200 transition-colors"
+              placeholder="e.g. Drive Shaft Assembly"
+              required
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">Quantity</label>
+              <input
+                type="number"
+                min="1"
+                value={form.qty}
+                onChange={e => update('qty', e.target.value)}
+                className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-200 transition-colors"
+                placeholder="100"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">Priority</label>
+              <select
+                value={form.priority}
+                onChange={e => update('priority', e.target.value)}
+                className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-200 transition-colors bg-white"
+              >
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="critical">Critical</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">Due Date</label>
+            <input
+              type="date"
+              value={form.dueDate}
+              onChange={e => update('dueDate', e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-200 transition-colors"
+              required
+            />
+          </div>
+
+          <div className="flex items-center gap-3 pt-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="flex-1 px-4 py-2.5 rounded-lg border border-slate-200 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              disabled={!isValid}
+              className="flex-1 px-4 py-2.5 rounded-lg bg-primary-500 text-white text-sm font-medium hover:bg-primary-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              Create Order
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
