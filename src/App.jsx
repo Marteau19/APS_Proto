@@ -8,7 +8,7 @@ import OrderDetail from './pages/OrderDetail';
 import Capacity from './pages/Capacity';
 import Scenarios from './pages/Scenarios';
 import KPIs from './pages/KPIs';
-import Promise from './pages/Promise';
+import ControlPanel from './pages/ControlPanel';
 
 export default function App() {
   return (
@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/capacity" element={<Capacity />} />
           <Route path="/scenarios" element={<Scenarios />} />
           <Route path="/kpis" element={<KPIs />} />
-          <Route path="/promise" element={<Promise />} />
+          <Route path="/control-panel" element={<ControlPanel />} />
         </Route>
       </Routes>
     </HashRouter>

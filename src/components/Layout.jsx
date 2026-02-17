@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, CalendarRange, AlertTriangle, ClipboardList,
-  BarChart3, GitBranch, Gauge, Handshake, Sparkles, X, Send,
+  BarChart3, GitBranch, Gauge, Settings, Sparkles, X, Send,
   ChevronRight, Search, Bell, User
 } from 'lucide-react';
 import FlowIQPanel from './FlowIQPanel';
@@ -15,7 +15,7 @@ const navItems = [
   { to: '/capacity', icon: BarChart3, label: 'Capacity' },
   { to: '/scenarios', icon: GitBranch, label: 'Scenarios' },
   { to: '/kpis', icon: Gauge, label: 'KPIs' },
-  { to: '/promise', icon: Handshake, label: 'Promise' },
+  { to: '/control-panel', icon: Settings, label: 'Control Panel' },
 ];
 
 export default function Layout() {
@@ -28,8 +28,8 @@ export default function Layout() {
   return (
     <div className="flex h-screen overflow-hidden bg-slate-50">
       {/* Sidebar */}
-      <aside className="w-20 bg-slate-900 flex flex-col items-center py-5 gap-1.5 shrink-0">
-        <div className="w-11 h-11 rounded-lg bg-primary-500 flex items-center justify-center mb-5">
+      <aside className="w-24 bg-slate-900 flex flex-col items-center py-5 gap-1 shrink-0 overflow-y-auto">
+        <div className="w-11 h-11 rounded-lg bg-primary-500 flex items-center justify-center mb-4">
           <span className="text-white font-bold text-base">F</span>
         </div>
 
@@ -38,17 +38,17 @@ export default function Layout() {
             key={to}
             to={to}
             className={({ isActive }) =>
-              `relative w-12 h-12 rounded-lg flex items-center justify-center transition-colors group
+              `relative w-[72px] py-2 rounded-lg flex flex-col items-center justify-center gap-1 transition-colors group
               ${isActive ? 'bg-slate-700 text-white' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'}`
             }
           >
-            <Icon size={22} />
+            <Icon size={20} />
             {badge && (
-              <span className="absolute -top-0.5 -right-0.5 w-5 h-5 rounded-full bg-red-500 text-white text-xs flex items-center justify-center font-medium">
+              <span className="absolute top-1 right-1 w-5 h-5 rounded-full bg-red-500 text-white text-xs flex items-center justify-center font-medium">
                 {badge}
               </span>
             )}
-            <span className="absolute left-16 bg-slate-800 text-white text-sm px-2.5 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none">
+            <span className="text-[10px] font-medium leading-tight text-center">
               {label}
             </span>
           </NavLink>
@@ -57,10 +57,11 @@ export default function Layout() {
         <div className="mt-auto flex flex-col gap-1 items-center">
           <button
             onClick={() => setFlowiqOpen(!flowiqOpen)}
-            className="w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-blue-500 text-white hover:opacity-90 transition-all flowiq-pulse"
+            className="w-[72px] py-2 rounded-lg flex flex-col items-center justify-center gap-1 bg-gradient-to-br from-indigo-500 via-purple-500 to-blue-500 text-white hover:opacity-90 transition-all flowiq-pulse"
             title="FlowIQ Assistant"
           >
-            <Sparkles size={22} />
+            <Sparkles size={20} />
+            <span className="text-[10px] font-medium leading-tight">FlowIQ</span>
           </button>
         </div>
       </aside>
